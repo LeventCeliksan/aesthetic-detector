@@ -1,6 +1,6 @@
 # Aesthetic Detector v1.0.0
 
-Initial public release of the trained ONNX models and a standalone Python inference library. Developers can download the weights and run local predictions without repeating training or running the original Android application and backend.
+Initial public release of Levent Celiksan's cosmetic-intervention classifier, fine-tuned on 1,000+ portrait photographs, packaged as a standalone Python inference library. Developers can download the weights and run local predictions without repeating the training work or running the original Android application and backend.
 
 ## Included
 

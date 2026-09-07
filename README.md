@@ -1,6 +1,6 @@
 # Aesthetic Detector
 
-A fine-tuned image classifier and Python inference library for experimenting with visual cues associated with cosmetic intervention in portrait photographs. Download the trained ONNX weights and run predictions locally without retraining or an API key.
+An image classifier fine-tuned by **Levent Celiksan** on 1,000+ portrait photographs to recognize visual cues associated with cosmetic intervention, packaged as a Python inference library so others can run it without repeating the training work. The author reports a 97% evaluation result; see [Training and reported result](#training-and-reported-result) for what that figure does and does not establish. Weights are distributed as ONNX and run locally with no retraining or API key required.
 
 The package includes a binary portrait classifier and an optional regional scorer for manually cropped facial regions. It is an independent inference package; the original Android application and backend are not required.
 
