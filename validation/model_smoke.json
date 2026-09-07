@@ -1,0 +1,33 @@
+{
+  "purpose": "Software execution and export-equivalence checks, not an accuracy benchmark.",
+  "environment": {
+    "system": "Darwin",
+    "architecture": "arm64",
+    "python": "3.14.6",
+    "onnxruntime": "1.29.0",
+    "onnx": "1.22.0",
+    "numpy": "2.5.3",
+    "pillow": "12.3.0"
+  },
+  "input_description": "Five deterministic synthetic images; no human photos or labels.",
+  "models": [
+    {
+      "filename": "binary_model_fp16.onnx",
+      "sha256": "6ac20e9a7abbeb2c3a564796b56c4b9cf6bebea3ab957e31b6d1023118dc96c7",
+      "sample_count": 5,
+      "onnx_checker": "passed",
+      "inference": "passed",
+      "repeated_results_identical": true,
+      "outputs_identical_to_original_export": true
+    },
+    {
+      "filename": "regional_model.onnx",
+      "sha256": "ee77947d01780fc019b76f8e3d5efe6f99fd4a98f68d55653ade98b9468d1532",
+      "sample_count": 5,
+      "onnx_checker": "passed",
+      "inference": "passed",
+      "repeated_results_identical": true,
+      "outputs_identical_to_original_export": true
+    }
+  ]
+}

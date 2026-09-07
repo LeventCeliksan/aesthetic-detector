@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Questions and examples
+    url: https://github.com/LeventCeliksan/aesthetic-detector/discussions
+    about: Ask questions or share integrations with the community.

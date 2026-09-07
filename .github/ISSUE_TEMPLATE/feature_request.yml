@@ -1,0 +1,11 @@
+name: Feature request
+description: Suggest an improvement to the reusable model package.
+title: "[Feature] "
+body:
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What would you like to use this package for?
+      description: Describe the use case and the proposed improvement.
+    validations:
+      required: true

@@ -1,0 +1,21 @@
+{
+  "version": "1.0.0",
+  "models": {
+    "binary": {
+      "filename": "binary_model_fp16.onnx",
+      "url": "https://github.com/LeventCeliksan/aesthetic-detector/releases/download/v1.0.0/binary_model_fp16.onnx",
+      "sha256": "6ac20e9a7abbeb2c3a564796b56c4b9cf6bebea3ab957e31b6d1023118dc96c7",
+      "bytes": 172193823,
+      "input_name": "pixel_values",
+      "output_name": "logits"
+    },
+    "regional": {
+      "filename": "regional_model.onnx",
+      "url": "https://github.com/LeventCeliksan/aesthetic-detector/releases/download/v1.0.0/regional_model.onnx",
+      "sha256": "ee77947d01780fc019b76f8e3d5efe6f99fd4a98f68d55653ade98b9468d1532",
+      "bytes": 17337635,
+      "input_name": "input",
+      "output_name": "score"
+    }
+  }
+}

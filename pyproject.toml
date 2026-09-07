@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=77", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aesthetic-detector"
+version = "1.0.0"
+description = "Reusable ONNX inference for fine-tuned cosmetic-intervention image classifiers"
+readme = "README.md"
+requires-python = ">=3.11"
+license = "MIT"
+license-files = ["LICENSE", "THIRD_PARTY_NOTICES.md"]
+authors = [{name = "Levent Celiksan"}]
+dependencies = ["numpy>=1.26,<3", "Pillow>=10.4,<13", "onnxruntime>=1.23,<2"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Programming Language :: Python :: 3",
+  "Topic :: Scientific/Engineering :: Artificial Intelligence",
+  "Topic :: Scientific/Engineering :: Image Recognition",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10", "onnx>=1.19,<2", "build>=1,<2", "ruff>=0.12,<1"]
+
+[project.scripts]
+aesthetic-detector = "aesthetic_detector.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/LeventCeliksan/aesthetic-detector"
+Documentation = "https://github.com/LeventCeliksan/aesthetic-detector#readme"
+Issues = "https://github.com/LeventCeliksan/aesthetic-detector/issues"
+Discussions = "https://github.com/LeventCeliksan/aesthetic-detector/discussions"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+aesthetic_detector = ["model_manifest.json", "py.typed"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
