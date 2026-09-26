@@ -47,11 +47,14 @@ def get_model(name: str, cache_dir: str | Path | None = None) -> Path:
     if _matches(destination, spec):
         return destination
 
+    if not spec["url"].startswith("https://"):
+        raise ValueError(f"Refusing non-HTTPS model URL for {spec['filename']}.")
     logger.info("Downloading %s (%.1f MiB)", spec["filename"], spec["bytes"] / 1024**2)
     temporary: Path | None = None
     try:
         request = Request(spec["url"], headers={"User-Agent": "aesthetic-detector/1.0.0"})
-        with urlopen(request, timeout=60) as response:
+        # URL comes from the packaged manifest and is HTTPS-only; the payload is size- and SHA-256-checked.
+        with urlopen(request, timeout=60) as response:  # nosec B310
             with tempfile.NamedTemporaryFile(dir=folder, suffix=".part", delete=False) as output:
                 temporary = Path(output.name)
                 count = 0
