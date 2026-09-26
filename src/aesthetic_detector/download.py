@@ -53,7 +53,7 @@ def get_model(name: str, cache_dir: str | Path | None = None) -> Path:
     temporary: Path | None = None
     try:
         request = Request(spec["url"], headers={"User-Agent": "aesthetic-detector/1.0.0"})
-        # URL comes from the packaged manifest and is HTTPS-only; the payload is size- and SHA-256-checked.
+        # URL comes from the packaged manifest and is HTTPS-only; payload is size/SHA-256 checked.
         with urlopen(request, timeout=60) as response:  # nosec B310
             with tempfile.NamedTemporaryFile(dir=folder, suffix=".part", delete=False) as output:
                 temporary = Path(output.name)
